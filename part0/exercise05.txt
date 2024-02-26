@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant person
+    participant browser
+    participant server
+    
+    person->>browser: Writes to input field
+    Note right of person: Presses save
+    
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    Note right of browser: {content, timestamp}
+    Note right of browser: Content-type: application/json (header)
+    
+    server->>browser: (201) created
+    
+
+   
